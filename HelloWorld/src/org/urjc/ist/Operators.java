@@ -11,6 +11,7 @@ public class Operators {
 		var1 += var2; //equivale a: var1 = var1 + var2
 		
 		System.out.println("El numerin es: " + var1);
+		System.out.println("el segundo numerin es:" + var2);
 	}
 
 }
