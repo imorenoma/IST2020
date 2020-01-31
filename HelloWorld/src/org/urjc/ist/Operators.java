@@ -12,6 +12,9 @@ public class Operators {
 		
 		System.out.println("El numerin es: " + var1);
 		System.out.println("el segundo numerin es:" + var2);
+		
+		System.out.println(var1 == var2); //false
+		System.out.println();//true
 	}
 
 }
