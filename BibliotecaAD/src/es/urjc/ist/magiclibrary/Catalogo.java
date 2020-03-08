@@ -2,21 +2,36 @@ package es.urjc.ist.magiclibrary;
 
 import java.util.GregorianCalendar;
 
-public class Catalogo {
-	
+public class Catalogo {	
 	
 	protected String titulo;
 	protected String autor;
 	protected String editorial;
-	protected int numPaginas;
+	protected int numPags;
 	protected String ISBN;
 	
 	public GregorianCalendar fechaPub;
 	
+	public Catalogo(String titulo, String autor, String editorial, int numPags,
+					String ISBN) {
+		
+		this.setTitulo(titulo);
+		this.setAutor(autor);
+		this.setEditorial(editorial);
+		this.setNumPags(numPags);
+		this.setISBN(ISBN);
 	
-	String[] keywords;	
+	}
 	
+	/*Sobrecargamos el constructor Catalogo*/
 	
+	public Catalogo(String titulo, String autor, int numPags) {
+		this.setTitulo(titulo);
+		this.setAutor(autor);
+		this.setNumPags(numPags);
+	}
+
+
 	public String getTitulo(){
 		return this.titulo;
 	}
@@ -58,7 +73,7 @@ public class Catalogo {
 		return this.editorial;
 	}
 	
-	public String seteditorial(String editorial) {
+	public String setEditorial(String editorial) {
 		if(editorial.equals("") || editorial.equals(" ")) {
 			editorial = "editorial is void";
 			this.editorial = editorial;
@@ -75,19 +90,39 @@ public class Catalogo {
 	
 	
 	
-	public int getNumPaginas(){
-		return this.numPaginas;
+	public int getNumPags(){
+		return this.numPags;
 	}
 	
-	public int setNumPaginas(int numPaginas) {
-		if(numPaginas <= 0 || numPaginas >= 10000) {
-			numPaginas = 0;
-			this.numPaginas = numPaginas;
-			return this.numPaginas;
+	public int setNumPags(int numPags) {
+		if(numPags <= 0 || numPags >= 10000) {
+			numPags = 0;
+			this.numPags = numPags;
+			return this.numPags;
 		}else {
-			this.numPaginas = numPaginas;
-			return this.numPaginas;
+			this.numPags = numPags;
+			return this.numPags;
 		}
-	}	
+	}
+	
+	
+	public String getISBN() {
+		return this.ISBN;
+	}
+	
+	public String setISBN(String ISBN) {
+		if(ISBN.equals("") || ISBN.equals(" ")) {
+			ISBN = "ISBN is void";
+			this.ISBN = ISBN;
+			return this.ISBN;
+		}else if(ISBN.length() != 13){
+			ISBN = "ISBN is void";
+			this.ISBN = ISBN;
+			return this.ISBN;			
+		}else {
+			this.ISBN = ISBN;
+			return this.ISBN;
+		}
+	}
 }	
 		

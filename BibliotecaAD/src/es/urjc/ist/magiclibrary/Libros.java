@@ -3,7 +3,9 @@ package es.urjc.ist.magiclibrary;
 import java.util.*;
 
 public class Libros extends Catalogo{
-
+	
+	String[] Keywords;
+	
 	public Libros(String titulo, String autor, String editorial, int numPags, String ISBN) {
 		super(titulo, autor, editorial, numPags, ISBN);
 	}
